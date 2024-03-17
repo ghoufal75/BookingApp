@@ -1,0 +1,43 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-toggle autoHide="false" menu="main-content">
+      <ion-button autoHide="false" menu="main-content" color="dark" size="small">
+        <ion-icon src="../../assets/icon/Menu-icone.svg" slot="icon-only" color="dark"></ion-icon>
+      </ion-button>
+    </ion-menu-toggle>
+    <!-- <ion-menu-button autoHide="false" color="dark" 	menu="main-content"></ion-menu-button> -->
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-avatar class="profilePic">
+        <img alt="Silhouette of a person's head" src="https://www.cravate-avenue.com/img/cms/STARS/harvey_specter%202.jpg" />
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="hero">
+    <div class="hero__content">
+        <h1>
+          A <span class="graded">special dish</span> prepared just for you.
+        </h1>
+        <p>Our food delivery app brings your favourite dishes to you</p>
+    </div>
+
+  </div>
+
+  <div  class="categorieWrapper" >
+    <swiper-container style="width : 100%;height: 100%;" initial-slide="0" (swiperactiveindexchange)="onActiveIndexChange()" slides-per-view="2.5">
+      <swiper-slide  style="padding : 0 1.5rem"*ngFor="let cat of mealCategories">
+        <div class="categorie">
+          <img [src]="cat.imgUrl"/>
+          <h2>{{cat.title}}</h2>
+        </div>
+      </swiper-slide>
+
+    </swiper-container>
+  </div>
+
+</ion-content>

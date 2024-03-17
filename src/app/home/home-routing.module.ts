@@ -6,6 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+    children : [
+     {path : "booking",loadChildren : ()=>import('../booking/booking.module').then(f=>f.BookingModule)},
+     {path : "discover",loadChildren : ()=>import('../discover/discover.module').then(f=>f.DiscoverModule)},
+     {path : '',redirectTo:'discover',pathMatch:'full'}
+    ]
   }
 ];
 

@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'discover-list',
+    loadChildren: () => import('./discover/discover-list/discover-list.module').then( m => m.DiscoverListPageModule)
+  },
+  {
+    path: 'discover-detail',
+    loadChildren: () => import('./discover/discover-detail/discover-detail.module').then( m => m.DiscoverDetailPageModule)
+  },
 ];
 
 @NgModule({
